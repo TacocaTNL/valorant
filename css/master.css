@@ -19,6 +19,7 @@ body {
         [row2-start] ". main ." 1fr [row2-end]
         [row3-start] "footer footer footer" 50px [row3-end]
         / 1fr 1200px 1fr;
+  background-color: #ECE8E2;
 }
 
 @media (max-width: 700px) {
@@ -43,10 +44,15 @@ header {
   display: flex;
   grid-area: header;
   align-items: center;
+  background-color: #000000;
 }
 
 #brand {
   flex: 0 0 auto;
+  margin: 0 20px;
+  font-size: 32px;
+  font-weight: 800;
+  color: #FFFFFF;
 }
 
 #nav {
@@ -55,13 +61,37 @@ header {
 
 #login {
   flex: 0 0 auto;
+  margin: 0 20px;
+}
+
+#login input {
+  border: 0;
+  border-radius: 3px;
+  padding: 12px;
+  font-size: 11px;
+  font-weight: 800;
+  background-color: #FF4655;
+  color: white;
 }
 
 main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   grid-area: main;
-  background-color: blue;
+  border: 1px solid black;
+}
+
+.map-container {
+  display: flex;
+  flex-flow: row wrap;
+  width: 1000px;
+  height: 10px;
+  border: 1px solid black;
 }
 
 footer {
   grid-area: footer;
+  color: #FFFFFF;
+  background-color: #000000;
 }
