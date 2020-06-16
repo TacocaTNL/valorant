@@ -79,15 +79,33 @@ main {
   justify-content: center;
   align-items: center;
   grid-area: main;
-  border: 1px solid black;
 }
 
 .map-container {
   display: flex;
   flex-flow: row wrap;
-  width: 1000px;
-  height: 10px;
-  border: 1px solid black;
+  justify-content: center;
+  width: 85%;
+}
+
+.map {
+  position: relative;
+  width: 40%;
+  margin: 25px;
+}
+
+.map img {
+  width: 100%;
+}
+
+.map span {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 10px;
+  color: white;
+  font-weight: 600;
+  font-size: 24px;
 }
 
 footer {
