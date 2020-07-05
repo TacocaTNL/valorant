@@ -1,16 +1,7 @@
-@font-face {
-  font-family: "Rubik";
-  src: url(fonts/Rubik-Regular.ttf);
-  font-weight: normal;
-}
-
-*{
-  font-family: "Rubik";
-}
-
 html, body {
   height: 100%;
   width: 100%;
+  letter-spacing: 2px;
 }
 
 body {
@@ -22,7 +13,7 @@ body {
   background-color: #ECE8E2;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
   body {
     grid: [row1-start] "header" 75px [row1-end]
           [row2-start] "main" 1fr [row2-end]
@@ -31,7 +22,7 @@ body {
   }
 }
 
-@media (min-width: 700px) and (max-width: 1200px) {
+@media (min-width: 769px) and (max-width: 1200px) {
   body {
     grid: [row1-start] "header header header" 75px [row1-end]
           [row2-start] ". main ." 1fr [row2-end]
@@ -52,6 +43,7 @@ header {
   margin: 0 20px;
   font-size: 32px;
   font-weight: 800;
+  letter-spacing: 3px;
   color: #FFFFFF;
 }
 
@@ -67,9 +59,10 @@ header {
 #login input {
   border: 0;
   border-radius: 3px;
-  padding: 12px;
+  padding: 12px 30px;
   font-size: 11px;
   font-weight: 800;
+  text-transform: uppercase;
   background-color: #FF4655;
   color: white;
 }
@@ -92,6 +85,20 @@ main {
   position: relative;
   width: 40%;
   margin: 25px;
+}
+
+.map:hover .map-overlay {
+  width: 100%;
+}
+
+.map-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  transition: 0.5s ease-out;
+  background-color: black;
 }
 
 .map img {
