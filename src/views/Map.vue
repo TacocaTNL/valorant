@@ -1,21 +1,56 @@
 <template>
   <div id="sidebar" class="">
-    <select id="agents" class="agents" name="agents">
-      <option value="sova" selected>Sova</option>
-      <option value="jett">Jett</option>
-      <option value="sage">Sage</option>
-      <option value="rage">Rage</option>
+    <select v-model="selectedAgent">
+      <option
+        v-for="agent in agents"
+        :key="agent.name"
+        :value="agent.name"
+        selected
+      >
+        {{ agent.name }}
+      </option>
     </select>
-    <select id="subtype" class="subtype" name="subtype"></select>
+    <select id="subtype" class="subtype" name="subtype">
+      <option v-for="suboption in suboptions" :key="suboption">
+        {{ suboption }}
+      </option>
+    </select>
   </div>
-  <img class="map-img" :src="`/img/${name}_map.png`" alt="" />
+  <img class="map-img" :src="`/img/${mapName}_map.png`" alt="" />
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      selectedAgent: 'Sova',
+      agents: [
+        {
+          name: 'Sova',
+          options: ['Shock Darts', 'Recon darts'],
+        },
+        {
+          name: 'Sage',
+          options: [],
+        },
+        {
+          name: 'Jett',
+          options: [],
+        },
+        {
+          name: 'Rage',
+          options: [],
+        },
+      ],
+    };
+  },
   computed: {
-    name() {
+    mapName() {
       return this.$route.params.name;
+    },
+    suboptions() {
+      return this.agents.find((agent) => agent.name === this.selectedAgent)
+        .options;
     },
   },
 };
