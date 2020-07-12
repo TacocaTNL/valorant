@@ -1,0 +1,34 @@
+@import 'reset';
+
+html, body, #app {
+  height: 100%;
+  width: 100%;
+  letter-spacing: 2px;
+}
+
+#app {
+  display: grid;
+  grid:
+    [row1-start] 'header header header' 75px [row1-end]
+    [row2-start] '. main .' 1fr [row2-end]
+    [row3-start] 'footer footer footer' 50px [row3-end]
+    / 1fr 1200px 1fr;
+  background-color: #ece8e2;
+
+  @media (max-width: 768px) {
+    grid:
+      [row1-start] 'header' 75px [row1-end]
+      [row2-start] 'main' 1fr [row2-end]
+      [row3-start] 'footer' 50px [row3-end]
+      / 1fr;
+  }
+
+  @media (min-width: 769px) and (max-width: 1200px) {
+    grid:
+      [row1-start] 'header header header' 75px [row1-end]
+      [row2-start] '. main .' 1fr [row2-end]
+      [row3-start] 'footer footer footer' 50px [row3-end]
+      / 1fr 700px 1fr;
+  }
+}
+
