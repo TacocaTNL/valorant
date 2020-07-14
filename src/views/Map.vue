@@ -5,18 +5,18 @@
         v-for="agent in agents"
         :key="agent.name"
         :value="agent.name"
-        selected
       >
         {{ agent.name }}
       </option>
     </select>
-    <select id="subtype" class="subtype" name="subtype">
+    <select v-model="selectedAbility" id="subtype" class="subtype" name="subtype" @change="loadSVG">
       <option v-for="suboption in suboptions" :key="suboption">
         {{ suboption }}
       </option>
     </select>
-  </div>
-  <img class="map-img" :src="`/img/${mapName}_map.png`" alt="" />
+  </div><span>{{ selectedAbility }}</span>
+  <object id="map-img" class="map-img" :data="`/img/${mapName}_map.svg`" type="image/svg+xml"></object>
+  <!-- <img class="map-img" :src="`/img/${mapName}_map.svg`" alt="" /> -->
 </template>
 
 <script>
@@ -24,6 +24,7 @@ export default {
   data() {
     return {
       selectedAgent: 'Sova',
+      selectedAbility: 'Shock Darts',
       agents: [
         {
           name: 'Sova',
@@ -44,6 +45,18 @@ export default {
       ],
     };
   },
+  methods: {
+    loadSVG() {
+      var agent = this.selectedAgent;
+      var ability = this.selectedAbility;
+      var id = (agent + ability).split(' ')[0];
+      for (var i = 0; i < document.getElementById('map-img').contentDocument.getElementsByClassName('ability').length; i++) {
+        document.getElementById('map-img').contentDocument.getElementsByClassName('ability')[i].style.display = 'none';
+      }
+      var object = document.getElementById('map-img').contentDocument.getElementById(id);
+      return object.style.display = 'inline';
+    }
+  },
   computed: {
     mapName() {
       return this.$route.params.name;
@@ -51,9 +64,11 @@ export default {
     suboptions() {
       return this.agents.find((agent) => agent.name === this.selectedAgent)
         .options;
-    },
-  },
+    }
+  }
 };
+
+
 </script>
 
 <style lang="scss" scoped>

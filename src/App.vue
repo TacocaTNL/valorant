@@ -9,7 +9,7 @@
   <main>
     <router-view />
   </main>
-  <footer></footer>
+  <footer v-if="this.$route.path == '/'"></footer>
 </template>
 
 <style lang="scss" scoped>

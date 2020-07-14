@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import Map from '../components/map.vue';
+import Map from '../components/mapCard.vue';
 
 export default {
   components: {

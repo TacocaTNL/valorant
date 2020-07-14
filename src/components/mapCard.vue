@@ -3,8 +3,8 @@
     <router-link :to="`/map/${name}`">
       <img :src="`/img/${name}.png`" alt="" />
       <div class="map-overlay"></div>
-      <span class="map-name">{{ name }}</span> </router-link
-    >
+      <span class="map-name">{{ name }}</span>
+    </router-link>
   </div>
 </template>
 
