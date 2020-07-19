@@ -3,18 +3,12 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 2047.2 1921.2" style="enable-background:new 0 0 2047.2 1921.2;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#6D6E71;}
-	.st1{fill:#B4D784;}
-	.st2{fill:#EE7D82;}
+	.st0{fill:#6D6E71;} <!-- -->
+	.st1{fill:#B4D784;} <!-- -->
+	.st2{fill:#ada793;} <!-- Bombsites -->
 	.st3{fill:none;stroke:#FFFFFF;stroke-width:3;stroke-miterlimit:10;}
 	.st4{fill:none;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10;}
 </style>
-<g id="SovaShock" class="ability" style="display:none;">
-	<rect width="300" height="100" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
-</g>
-<g id="SovaRecon" class="ability" style="display:none;">
-	<polygon points="0,0 250,0 0, 250" style="fill:lime;stroke:purple;stroke-width:1" />
-</g>
 <g id="Outer_walls">
 	<g id="XMLID_1_">
 		<g>
@@ -125,5 +119,13 @@
 	<circle class="st4" cx="1054.6" cy="997" r="11.9"/>
 	<circle class="st4" cx="1608.6" cy="1147.8" r="22"/>
 	<circle class="st4" cx="218.8" cy="877.3" r="12.3"/>
+</g>
+<g id="SovaShock" class="ability" style="display:none;">
+	<g class="attacker side" style="display:none"></g>
+	<g class="defender side" style="display:none"></g>
+</g>
+<g id="SovaRecon" class="ability" style="display:none;">
+	<g class="attacker side" style="display:none"></g>
+	<g class="defender side" style="display:none"></g>
 </g>
 </svg>
