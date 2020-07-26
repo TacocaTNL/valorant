@@ -8,6 +8,19 @@
 	.st2{fill:#ada793;} <!-- Bombsites -->
 	.st3{fill:none;stroke:#FFFFFF;stroke-width:3;stroke-miterlimit:10;}
 	.st4{fill:none;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10;}
+
+	.polygon {
+	  fill: rgba(255,255,255,0);
+	  stroke: #EC5964;
+	  stroke-width: 8px;
+		cursor: pointer;
+		transition: 0.2s ease-out;
+	}
+
+	.polygon:hover {
+		fill: #EC5964;
+	}
+
 </style>
 <g id="Outer_walls">
 	<g id="XMLID_1_">
@@ -120,12 +133,20 @@
 	<circle class="st4" cx="1608.6" cy="1147.8" r="22"/>
 	<circle class="st4" cx="218.8" cy="877.3" r="12.3"/>
 </g>
-<g id="SovaShock" class="ability" style="display:none;">
-	<g class="attacker side" style="display:none"></g>
-	<g class="defender side" style="display:none"></g>
+<g id="SovaShock" class="ability">
+	<g class="attackers side" style="display:none">
+
+	</g>
+	<g class="defenders side" style="display:none">
+
+	</g>
 </g>
-<g id="SovaRecon" class="ability" style="display:none;">
-	<g class="attacker side" style="display:none"></g>
-	<g class="defender side" style="display:none"></g>
+<g id="SovaRecon" class="ability">
+	<g class="attackers side" style="display:none">
+
+	</g>
+	<g class="defenders side" style="display:none">
+
+	</g>
 </g>
 </svg>
