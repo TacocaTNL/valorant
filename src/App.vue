@@ -1,16 +1,34 @@
 <template>
   <header>
     <router-link to="/">
-      <div id="brand" class="">Valorant</div>
+      <div id="brand">Valorant</div>
     </router-link>
     <div id="nav"></div>
-    <div id="login" class=""><input type="button" name="" value="Login" /></div>
+    <div id="login">
+      <button type="button" @click="modalActive = true">Login</button>
+    </div>
   </header>
   <main>
+    <Modal :active="modalActive" @close="modalActive = false" />
     <router-view />
   </main>
   <footer v-if="this.$route.path == '/'"></footer>
 </template>
+
+<script>
+import Modal from './components/modal.vue';
+
+export default {
+  components: {
+    Modal,
+  },
+  data() {
+    return {
+      modalActive: false,
+    }
+  },
+}
+</script>
 
 <style lang="scss" scoped>
 header {
@@ -37,7 +55,7 @@ header {
   flex: 0 0 auto;
   margin: 0 20px;
 
-  input {
+  button {
     border: 0;
     border-radius: 3px;
     padding: 12px 30px;
