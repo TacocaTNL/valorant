@@ -1,5 +1,5 @@
 <template>
-  <div class="modal" @click="close">
+  <div class="modal" v-if="active" @click.self="close">
     <div class="modal-content">
       <span class="close" @click="close">&times;</span>
       <p>Lorem Ipsum</p>
@@ -9,16 +9,10 @@
 
 <script>
 export default {
-  data() {
-    return {
-
-    }
-  },
+  props: ['active'],
   methods: {
     close() {
-      if (!(event.target == document.getElementsByClassName('modal-content')[0])) {
-        document.getElementsByClassName('modal')[0].style.display = 'none';
-      }
+      this.$emit('close');
     }
   }
 };
@@ -26,7 +20,6 @@ export default {
 
 <style lang="scss" scoped>
 .modal {
-  display: none;
   align-items: center;
   justify-content: center;
   position: fixed;
